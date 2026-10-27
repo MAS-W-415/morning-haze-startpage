@@ -10,7 +10,7 @@
 
 ### 从 Edge 加载项商店安装
 
-公开上架审核通过后，可以直接从 Microsoft Edge 加载项商店安装。商店链接会在通过审核后补充到这里。
+公开上架后，可以直接从 Microsoft Edge 加载项商店安装。商店链接会在上架后补充到这里。
 
 ### 从 GitHub 安装
 
@@ -340,4 +340,4 @@ GitHub 版：
 - 问题反馈：https://github.com/MAS-W-415/morning-haze-startpage/issues
 - 安装页：https://mas-w-415.github.io/morning-haze-startpage/
 - 隐私政策：https://mas-w-415.github.io/morning-haze-startpage/privacy.html
-- Edge 加载项商店：上架审核通过后补充
+- Edge 加载项商店：上架后补充
