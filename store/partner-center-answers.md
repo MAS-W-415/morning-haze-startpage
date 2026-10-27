@@ -67,7 +67,7 @@ No.
 
 ## Privacy policy URL
 
-https://MAS-W-415.github.io/morning-haze-startpage/privacy.html
+https://mas-w-415.github.io/morning-haze-startpage/privacy.html
 
 ## Notes for certification
 

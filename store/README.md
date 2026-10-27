@@ -15,25 +15,27 @@
 
 ## 发布前需要替换
 
-在以下文件中把 `MAS-W-415` 替换成实际的 GitHub 用户名：
+当前配置使用的 GitHub 用户名是 `MAS-W-415`，仓库是 `morning-haze-startpage`。
+
+如果以后更换用户名或仓库名，需要同步修改：
 
 - `README.md`
 - `PRIVACY.md`
 - `docs/config.js`
-- `docs/app.js` 不需要改，它读取 `docs/config.js`
 - `docs/index.html` 里的静态兜底链接
 - `docs/privacy.html` 里的静态兜底链接
 - `store/listing-zh.md`
 - `store/partner-center-answers.md`
 - `store/README.md`
+- `manifest.json` 的 `homepage_url`
 
-如果仓库名不是 `morning-haze-startpage`，也要一起替换。
+`docs/app.js` 不需要改，它读取 `docs/config.js`。
 
 确认这些地址可以访问：
 
 ```text
-https://MAS-W-415.github.io/morning-haze-startpage/
-https://MAS-W-415.github.io/morning-haze-startpage/privacy.html
+https://mas-w-415.github.io/morning-haze-startpage/
+https://mas-w-415.github.io/morning-haze-startpage/privacy.html
 https://github.com/MAS-W-415/morning-haze-startpage
 https://github.com/MAS-W-415/morning-haze-startpage/issues
 ```
@@ -71,6 +73,18 @@ Settings → Pages → Deploy from a branch → main → /docs
    - 官网、支持、隐私链接使用上面的 GitHub Pages 地址
 7. **Notes for certification**：粘贴 `store/partner-center-answers.md` 里的测试说明
 8. 发布并等待审核。官方文档说明认证最长约 7 个工作日
+
+审核通过后：
+
+- 把商店链接填到 `docs/config.js` 的 `storeUrl`
+- 把 `README.md` 里的商店链接占位说明替换成实际链接
+- 提交并推送；GitHub Pages 会自动更新
+
+商店链接格式类似：
+
+```text
+https://microsoftedge.microsoft.com/addons/detail/扩展ID
+```
 
 ## 审核时可能关注
 

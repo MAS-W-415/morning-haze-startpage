@@ -49,7 +49,7 @@ Productivity
 
 ## Website
 
-https://MAS-W-415.github.io/morning-haze-startpage/
+https://mas-w-415.github.io/morning-haze-startpage/
 
 ## Support contact detail
 
@@ -57,7 +57,7 @@ https://github.com/MAS-W-415/morning-haze-startpage/issues
 
 ## Privacy policy URL
 
-https://MAS-W-415.github.io/morning-haze-startpage/privacy.html
+https://mas-w-415.github.io/morning-haze-startpage/privacy.html
 
 ## Search terms
 

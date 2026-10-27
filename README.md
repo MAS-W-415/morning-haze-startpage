@@ -338,6 +338,6 @@ GitHub 版：
 - GitHub 仓库：https://github.com/MAS-W-415/morning-haze-startpage
 - 最新版本：https://github.com/MAS-W-415/morning-haze-startpage/releases/latest
 - 问题反馈：https://github.com/MAS-W-415/morning-haze-startpage/issues
-- 安装页：https://MAS-W-415.github.io/morning-haze-startpage/
-- 隐私政策：https://MAS-W-415.github.io/morning-haze-startpage/privacy.html
+- 安装页：https://mas-w-415.github.io/morning-haze-startpage/
+- 隐私政策：https://mas-w-415.github.io/morning-haze-startpage/privacy.html
 - Edge 加载项商店：上架审核通过后补充
