@@ -4,6 +4,8 @@
 
 没有框架、没有构建工具、没有压缩代码。改完保存，刷新新标签页就能看到。
 
+不想看源码？直接打开 [安装页](https://mas-w-415.github.io/morning-haze-startpage/)，按三步安装。
+
 ![晨雾起始页主页](docs/assets/screenshots/home.png)
 
 ## 安装
