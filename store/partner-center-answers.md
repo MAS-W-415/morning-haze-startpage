@@ -18,11 +18,11 @@ Replace the Microsoft Edge new tab page with a quiet, keyboard-friendly start pa
 
 **中文：**
 
-读取 Edge 收藏夹栏的文件夹和书签，用于在自定义新标签页中展示。扩展只调用读取接口和收藏夹变化事件；不会创建、修改、移动、删除或上传书签。扩展不读取“其他收藏夹”。
+读取浏览器提供的书签树，并筛选出收藏夹栏的文件夹和书签，用于在自定义新标签页中展示。扩展只调用读取接口和收藏夹变化事件；不会创建、修改、移动、删除或上传书签。其他收藏夹中的内容不会显示、使用或上传。
 
 **English:**
 
-Reads the Edge favorites bar to display its folders and bookmarks on the custom new tab page. The extension only uses read APIs and bookmark change events; it never creates, edits, moves, deletes, or uploads bookmarks. It does not read the "Other favorites" folder.
+Reads the browser bookmark tree and filters it to the favorites bar to display its folders and bookmarks on the custom new tab page. The extension only uses read APIs and bookmark change events; it never creates, edits, moves, deletes, or uploads bookmarks. Other favorites are not displayed, used, or transmitted.
 
 ### favicon
 
@@ -56,7 +56,7 @@ No.
 
 | 数据 | 处理方式 |
 |---|---|
-| 收藏夹栏的文件夹名称、书签标题和网址 | 仅在用户设备本地读取，用于渲染新标签页；不上传、不出售、不共享 |
+| 书签树中的收藏夹栏文件夹名称、书签标题和网址 | 仅在用户设备本地读取并筛选收藏夹栏，用于渲染新标签页；其他收藏夹不显示、不使用、不上传、不出售、不共享 |
 | 网站图标 | 通过浏览器本地 favicon 接口读取 |
 | 默认搜索引擎 | 仅保存在本机 localStorage |
 | 书签打开次数和最近使用时间 | 仅保存在本机 localStorage |
@@ -86,7 +86,7 @@ https://mas-w-415.github.io/morning-haze-startpage/privacy.html
 7. 提交搜索，确认结果在新标签页打开
 8. 输入完整 `https://` 网址，确认在当前标签页打开
 
-扩展只显示收藏夹栏，不读取“其他收藏夹”。不需要测试账号。扩展没有远程请求、分析统计或广告；搜索请求只在用户主动提交时发往所选搜索引擎。
+扩展只显示收藏夹栏；浏览器的书签接口会返回完整书签树，但代码只筛选收藏夹栏，其他收藏夹不显示、不使用、不上传。不需要测试账号。扩展没有远程请求、分析统计或广告；搜索请求只在用户主动提交时发往所选搜索引擎。
 
 ### English
 
@@ -103,7 +103,7 @@ Test steps:
 7. Submit a search and confirm it opens in a new tab
 8. Enter a full `https://` URL and confirm it opens in the current tab
 
-The extension only displays the favorites bar, not "Other favorites". No test account is required. There are no remote requests, analytics, or ads. Search requests are sent only to the selected search engine when the user submits a search.
+The extension only displays the favorites bar. The browser bookmarks API returns the full bookmark tree, but the extension filters it to the favorites bar; other favorites are not displayed, used, or transmitted. No test account is required. There are no remote requests, analytics, or ads. Search requests are sent only to the selected search engine when the user submits a search.
 
 ## Publisher and public information
 

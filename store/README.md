@@ -88,7 +88,7 @@ https://microsoftedge.microsoft.com/addons/detail/扩展ID
 
 ## 审核时可能关注
 
-- `bookmarks` 权限：只读收藏夹栏，用于新标签页展示；代码不写入、不上传
+- `bookmarks` 权限：只读使用书签数据，仅显示收藏夹栏；其他收藏夹不显示、不使用、不上传；代码不写入
 - `favicon` 权限：使用 Chromium 本地图标接口
 - 新标签页覆盖：扩展的核心功能
 - 焦点行为：Chromium 新标签页可能把焦点放在地址栏，点击页面空白是预期替代操作
