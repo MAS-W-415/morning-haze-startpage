@@ -270,7 +270,6 @@ assets/icons/             Bing / Google / 扩展图标
 assets/fonts/             Inter / Noto Sans SC 字体
 
 docs/                     GitHub Pages 安装页和隐私页
-store/                    商店文案、提交清单和商店素材
 .github/workflows/        GitHub Actions 自动打包
 PRIVACY.md                隐私政策源文件
 THIRD_PARTY_NOTICES.md    第三方来源和许可证

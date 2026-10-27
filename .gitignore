@@ -19,3 +19,6 @@ node_modules/
 *.log
 tmp/
 .tmp/
+
+# 商店提交材料单独保存在私有仓库
+store/
