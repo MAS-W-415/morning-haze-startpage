@@ -9,7 +9,7 @@ window.START_PAGE_CONFIG = {
     // GitHub 仓库名
     githubRepo: 'morning-haze-startpage',
 
-    // Edge 加载项商店链接。审核通过后填这里，页面会自动显示商店按钮。
+    // Edge 加载项商店链接。上架后填这里，页面会自动显示商店按钮。
     // 例如 'https://microsoftedge.microsoft.com/addons/detail/xxxxxxxx'
     storeUrl: '',
 };
