@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#eef2f5">
+    <meta name="description" content="晨雾起始页隐私政策：只在本机读取收藏夹栏，不上传书签和使用记录。">
+    <title>隐私政策 · 晨雾起始页</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="page-shell header-inner">
+            <a class="brand" href="./index.html">
+                <img src="assets/icon-128.png" alt="" width="34" height="34">
+                <span>晨雾起始页</span>
+            </a>
+
+            <nav class="site-nav" aria-label="页面导航">
+                <a class="nav-link" href="index.html#install">安装</a>
+                <a class="nav-link" href="index.html#features">功能</a>
+                <a class="nav-link" href="privacy.html">隐私</a>
+                <a class="nav-link is-github js-repo-link" href="https://github.com/MAS-W-415/morning-haze-startpage">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="privacy-page">
+        <div class="page-shell privacy-layout">
+            <aside class="privacy-aside" aria-label="隐私政策目录">
+                <p>目录</p>
+                <a href="#access">访问的数据</a>
+                <a href="#not-do">不会做的事</a>
+                <a href="#storage">保存和删除</a>
+                <a href="#permissions">权限说明</a>
+                <a href="#third-parties">第三方服务</a>
+                <a href="#children">儿童</a>
+                <a href="#changes">政策更新</a>
+                <a href="#contact">联系方式</a>
+                <a href="#english">English</a>
+            </aside>
+
+            <article class="privacy-article">
+                <a class="back-link" href="index.html">← 返回安装页</a>
+                <h1>隐私政策</h1>
+                <p class="effective">生效日期：2026 年 10 月 27 日</p>
+
+                <p>
+                    晨雾起始页是一个运行在 Microsoft Edge 中的新标签页扩展。本政策说明扩展会访问哪些数据、
+                    如何使用这些数据，以及数据保存在哪里。
+                </p>
+
+                <h2 id="access">1. 扩展访问的数据</h2>
+
+                <h3>收藏夹栏</h3>
+                <p>
+                    扩展会通过浏览器的 <code>bookmarks</code> 权限读取收藏夹栏中的文件夹名称、书签标题和网址，
+                    用于在新标签页的收藏夹浮层和书签查找中显示。
+                </p>
+                <p>
+                    扩展只读取数据，不会创建、修改、移动、删除或上传收藏夹。扩展不会读取“其他收藏夹”的内容。
+                </p>
+
+                <h3>网站图标</h3>
+                <p>
+                    扩展会通过 Chromium 提供的本地 favicon 接口获取书签站点的图标。该过程使用浏览器自己的图标缓存，
+                    不经过本项目的服务器。
+                </p>
+
+                <h3>搜索内容</h3>
+                <p>
+                    当你提交搜索时，搜索关键词会按照你选择的搜索引擎，拼接到对应网站的正常搜索地址中，
+                    例如 Bing 或 Google。
+                </p>
+                <p>
+                    搜索请求由你主动发起，并直接发送给你选择的搜索引擎。扩展不会额外收集、记录或上传搜索内容。
+                    搜索引擎如何处理搜索内容，由其各自的隐私政策决定。
+                </p>
+
+                <h3>本地设置和使用记录</h3>
+                <p>扩展会在本机的 <code>localStorage</code> 中保存：</p>
+                <ul>
+                    <li><code>searchEngine</code>：你选择的默认搜索引擎</li>
+                    <li><code>bookmarkUsage.v1</code>：从起始页打开书签的次数和最近使用时间</li>
+                </ul>
+                <p>
+                    这些数据只保存在当前浏览器配置文件中，不会由扩展上传或同步到其他设备。
+                </p>
+
+                <h2 id="not-do">2. 扩展不会做的事</h2>
+                <ul>
+                    <li>不收集账号、姓名、地址、电话号码或支付信息</li>
+                    <li>不收集位置、健康、财务或个人通信数据</li>
+                    <li>不记录完整浏览历史</li>
+                    <li>不使用分析统计、埋点、广告或行为追踪</li>
+                    <li>不出售、出租或向第三方转让用户数据</li>
+                    <li>不把收藏夹或使用记录发送给开发者</li>
+                    <li>不加载或执行远程代码</li>
+                </ul>
+
+                <h2 id="storage">3. 数据保存和删除</h2>
+                <p>设置和使用记录保存在浏览器的扩展存储中。你可以通过以下方式删除：</p>
+                <ul>
+                    <li>在扩展页面中清除该扩展的站点数据</li>
+                    <li>卸载扩展</li>
+                    <li>删除浏览器配置文件中对应的扩展数据</li>
+                </ul>
+                <p>收藏夹数据由浏览器和你的 Microsoft 账户管理，不属于本扩展。删除扩展不会修改你的收藏夹。</p>
+
+                <h2 id="permissions">4. 权限说明</h2>
+                <ul>
+                    <li><code>bookmarks</code>：读取收藏夹栏并展示书签。浏览器会显示“读取和更改你的收藏夹”的通用提示，但本扩展的实际代码只读。</li>
+                    <li><code>favicon</code>：显示书签站点的图标。</li>
+                    <li>新标签页覆盖：用晨雾起始页替换 Edge 新标签页。</li>
+                </ul>
+
+                <h2 id="third-parties">5. 第三方服务</h2>
+                <ul>
+                    <li>Microsoft Edge 加载项商店负责扩展的发布和更新，可能按照 Microsoft 的政策记录标准访问日志。</li>
+                    <li>GitHub 用于源代码、版本发布和本说明页面的托管，可能按照 GitHub 的政策记录标准访问日志。</li>
+                    <li>Bing、Google 等搜索引擎只在用户主动提交搜索时接收搜索内容。</li>
+                </ul>
+
+                <h2 id="children">6. 儿童</h2>
+                <p>本扩展不是面向儿童设计的产品，也不会主动收集任何人的个人数据。</p>
+
+                <h2 id="changes">7. 政策更新</h2>
+                <p>
+                    如果扩展的数据处理方式发生变化，本政策会更新，并修改顶部的生效日期。
+                    公开版本的最新政策以本页面为准。
+                </p>
+
+                <h2 id="contact">8. 联系方式</h2>
+                <p>
+                    如有隐私问题，请通过
+                    <a class="js-issues-link" href="https://github.com/MAS-W-415/morning-haze-startpage/issues">GitHub Issues</a>
+                    联系。
+                </p>
+
+                <section class="english" id="english">
+                    <h2>English summary</h2>
+                    <p>
+                        Morning Haze Start Page is a new-tab extension for Microsoft Edge.
+                        It reads the bookmarks bar locally to render bookmarks and folders,
+                        uses Chromium's local favicon service for site icons, and stores the
+                        selected search engine plus bookmark usage counts in local storage
+                        on the user's device.
+                    </p>
+                    <p>
+                        The extension does not collect, transmit, sell, or share bookmarks,
+                        usage data, or other personal information with the developer or third
+                        parties. Search queries are sent directly to the search engine selected
+                        by the user only when the user submits a search. No analytics,
+                        advertising, telemetry, or remote code is used.
+                    </p>
+                    <p>
+                        To delete locally stored settings and usage data, clear the extension's
+                        site data or uninstall the extension.
+                    </p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-shell">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/icon-128.png" alt="" width="36" height="36">
+                    <div>
+                        <strong>晨雾起始页</strong>
+                        <p>一个安静、键盘友好的 Edge 新标签页。</p>
+                    </div>
+                </div>
+
+                <nav class="footer-links" aria-label="页脚链接">
+                    <a href="index.html">安装页</a>
+                    <a class="js-repo-link" href="https://github.com/MAS-W-415/morning-haze-startpage">GitHub</a>
+                    <a class="js-issues-link" href="https://github.com/MAS-W-415/morning-haze-startpage/issues">问题反馈</a>
+                    <a class="js-license-link" href="https://github.com/MAS-W-415/morning-haze-startpage/blob/main/LICENSE">MIT 许可证</a>
+                    <a class="js-notices-link" href="https://github.com/MAS-W-415/morning-haze-startpage/blob/main/THIRD_PARTY_NOTICES.md">第三方说明</a>
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <p>基于 <a href="https://github.com/pedro-pablo/minimal-startpage-template">minimal-startpage-template</a> 修改，MIT License。</p>
+                <p>与 Microsoft、Bing、Google 无隶属关系。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

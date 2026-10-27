@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#eef2f5">
+    <meta name="description" content="晨雾浅色、大时钟与安静搜索，自动显示收藏夹栏的 Edge 新标签页。">
+    <title>晨雾起始页</title>
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <noscript>
+        <style>
+            #clock-div {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <main class="page">
+        <h1 class="sr-only">晨雾起始页</h1>
+
+        <section class="hero" aria-label="时间与搜索">
+            <div class="clock" id="clock-div">
+                <time id="clock" datetime="">
+                    <span id="clock-time">--:--</span>
+                    <span id="clock-date"></span>
+                </time>
+            </div>
+
+            <div class="search-shell">
+                <div class="engine-picker">
+                    <button
+                        id="engine-button"
+                        class="engine-button"
+                        type="button"
+                        aria-haspopup="menu"
+                        aria-expanded="false"
+                        aria-controls="engine-menu"
+                        aria-label="选择搜索引擎"
+                    >
+                        <img id="engine-icon" src="assets/icons/bing.svg" alt="" width="20" height="20">
+                    </button>
+
+                    <div id="engine-menu" class="engine-menu" role="menu" aria-label="搜索引擎" hidden></div>
+                </div>
+
+                <form id="search-form" class="search-form" action="https://www.bing.com/search" method="get" target="_blank">
+                    <label class="sr-only" for="search-bar">搜索</label>
+                    <input
+                        id="search-bar"
+                        name="q"
+                        type="text"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="搜索"
+                        aria-keyshortcuts="/"
+                        autofocus
+                    >
+                    <button id="search-bar-btn" class="search-submit" type="submit" aria-label="搜索">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"
+                             aria-hidden="true">
+                            <circle cx="11" cy="11" r="6.5"></circle>
+                            <path d="m16 16 4.5 4.5"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <noscript>
+            <p class="status">请启用 JavaScript 以显示时钟和收藏夹。搜索框仍然可以使用。</p>
+        </noscript>
+
+    </main>
+
+    <p id="bookmarks-status" class="status status-floating" role="status" aria-live="polite" hidden></p>
+
+    <button id="bookmark-launcher" class="bookmark-launcher" type="button" aria-label="打开收藏夹">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7.5A1.5 1.5 0 0 1 5.5 6H10l2 2h6.5A1.5 1.5 0 0 1 20 9.5v8A1.5 1.5 0 0 1 18.5 19h-13A1.5 1.5 0 0 1 4 17.5v-10Z"></path>
+        </svg>
+    </button>
+
+    <dialog id="folder-dialog" class="folder-dialog" aria-labelledby="folder-dialog-title">
+        <div class="dialog-panel">
+            <header class="dialog-header">
+                <button id="folder-back" class="icon-button" type="button" aria-label="返回上一级" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round" aria-hidden="true">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </button>
+
+                <div class="dialog-title-wrap">
+                    <span id="folder-dialog-dot" class="folder-dot" aria-hidden="true"></span>
+                    <h2 id="folder-dialog-title" class="dialog-title"></h2>
+                    <span id="folder-dialog-count" class="dialog-count"></span>
+                </div>
+
+                <button id="folder-search" class="icon-button" type="button" aria-label="查找书签">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <path d="m16 16 4.5 4.5"></path>
+                    </svg>
+                </button>
+
+                <button id="folder-close" class="icon-button" type="button" aria-label="关闭">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </button>
+            </header>
+
+            <nav id="folder-breadcrumb" class="breadcrumb" aria-label="当前位置"></nav>
+            <div id="folder-dialog-body" class="folder-dialog-body"></div>
+            <footer class="dialog-hint">↑↓ 选择 · Enter 打开 · Backspace 返回 · Esc 关闭</footer>
+        </div>
+    </dialog>
+
+    <dialog id="bookmark-finder" class="finder-dialog" aria-labelledby="bookmark-finder-title">
+        <div class="dialog-panel finder-panel">
+            <h2 id="bookmark-finder-title" class="sr-only">查找书签</h2>
+
+            <div class="finder-input-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4.5 4.5"></path>
+                </svg>
+                <label class="sr-only" for="bookmark-finder-input">查找书签</label>
+                <input
+                    id="bookmark-finder-input"
+                    class="finder-input"
+                    type="text"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="输入书签名称或网址…"
+                    role="combobox"
+                    aria-autocomplete="list"
+                    aria-expanded="false"
+                    aria-controls="bookmark-finder-results"
+                >
+                <button id="bookmark-finder-close" class="finder-close" type="button" aria-label="关闭">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <p id="bookmark-finder-summary" class="finder-summary" hidden></p>
+            <div id="bookmark-finder-results" class="finder-results" role="listbox" aria-label="书签搜索结果"></div>
+            <p id="bookmark-finder-empty" class="finder-empty" hidden>没有匹配的书签。</p>
+            <footer class="dialog-hint">↑↓ 选择 · Enter 打开 · Esc 关闭</footer>
+        </div>
+    </dialog>
+
+    <script src="js/config.js"></script>
+    <script src="js/bookmarks.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+name: Release extension package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate manifest and JavaScript
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('manifest.json', 'utf8'))"
+          node --check js/focus.js
+          node --check js/config.js
+          node --check js/bookmarks.js
+          node --check js/main.js
+          echo "Syntax OK"
+
+      - name: Check tag and manifest version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          MANIFEST_VERSION="$(node -p "require('./manifest.json').version")"
+
+          if [ "$TAG_VERSION" != "$MANIFEST_VERSION" ]; then
+            echo "Tag version ($TAG_VERSION) does not match manifest version ($MANIFEST_VERSION)"
+            exit 1
+          fi
+
+          echo "Version $MANIFEST_VERSION"
+
+      - name: Check required files
+        run: |
+          for file in \
+            manifest.json \
+            focus.html \
+            index.html \
+            css/main.css \
+            js/focus.js \
+            js/config.js \
+            js/bookmarks.js \
+            js/main.js \
+            LICENSE \
+            THIRD_PARTY_NOTICES.md \
+            PRIVACY.md
+          do
+            test -f "$file" || { echo "Missing $file"; exit 1; }
+          done
+
+      - name: Build extension zip
+        run: |
+          mkdir -p dist
+          zip -r -q dist/morning-haze-startpage.zip \
+            manifest.json \
+            focus.html \
+            index.html \
+            css \
+            js \
+            assets \
+            LICENSE \
+            THIRD_PARTY_NOTICES.md \
+            PRIVACY.md \
+            README.md \
+            CHANGELOG.md
+
+          unzip -l dist/morning-haze-startpage.zip
+          sha256sum dist/morning-haze-startpage.zip
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            dist/morning-haze-startpage.zip \
+            --title "晨雾起始页 $GITHUB_REF_NAME" \
+            --generate-notes
