@@ -44,14 +44,6 @@
         }
     }
 
-    for (const element of document.querySelectorAll('.js-store-pending')) {
-        element.hidden = Boolean(storeUrl);
-    }
-
-    for (const element of document.querySelectorAll('.js-store-ready')) {
-        element.hidden = !storeUrl;
-    }
-
     if (!configured) {
         console.warn(
             '还没有填写 docs/config.js 里的 GitHub 用户名和仓库名，下载链接暂时不可用。'
