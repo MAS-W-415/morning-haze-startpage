@@ -11,5 +11,6 @@ window.START_PAGE_CONFIG = {
 
     // Edge 加载项商店链接。上架后填这里，页面会自动显示商店按钮。
     // 例如 'https://microsoftedge.microsoft.com/addons/detail/xxxxxxxx'
-    storeUrl: '',
+    storeUrl:
+        'https://microsoftedge.microsoft.com/addons/detail/%E6%99%A8%E9%9B%BE%E8%B5%B7%E5%A7%8B%E9%A1%B5/hebgkmkhbdjanbhncfhgaalcicijdclc',
 };

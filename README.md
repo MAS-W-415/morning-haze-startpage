@@ -12,7 +12,9 @@
 
 ### 从 Edge 加载项商店安装
 
-公开上架后，可以直接从 Microsoft Edge 加载项商店安装。商店链接会在上架后补充到这里。
+打开 [晨雾起始页 · Microsoft Edge 加载项](https://microsoftedge.microsoft.com/addons/detail/%E6%99%A8%E9%9B%BE%E8%B5%B7%E5%A7%8B%E9%A1%B5/hebgkmkhbdjanbhncfhgaalcicijdclc)，点“获取”，允许读取收藏夹，然后打开新标签页。
+
+商店版会自动更新，不需要开启开发者模式。
 
 ### 从 GitHub 安装
 
@@ -342,4 +344,4 @@ GitHub 版：
 - 问题反馈：https://github.com/MAS-W-415/morning-haze-startpage/issues
 - 安装页：https://mas-w-415.github.io/morning-haze-startpage/
 - 隐私政策：https://mas-w-415.github.io/morning-haze-startpage/privacy.html
-- Edge 加载项商店：上架后补充
+- Edge 加载项商店：https://microsoftedge.microsoft.com/addons/detail/%E6%99%A8%E9%9B%BE%E8%B5%B7%E5%A7%8B%E9%A1%B5/hebgkmkhbdjanbhncfhgaalcicijdclc
